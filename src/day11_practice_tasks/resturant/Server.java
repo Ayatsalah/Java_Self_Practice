@@ -1,4 +1,4 @@
-package day11_practice_tasks;
+package day11_practice_tasks.resturant;
 
 public class Server {
    public String name;
@@ -25,7 +25,7 @@ public class Server {
               "name='" + name + '\'' +
               ", employeeID=" + employeeID +
               ", hourlyRate=" + hourlyRate +
-              ", fullTime=" + fullTime +
+              ", isFullTime=" + (fullTime?"full-time":"Part-time") +
               '}';
    }
 }

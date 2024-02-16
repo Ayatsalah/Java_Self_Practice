@@ -1,24 +1,22 @@
-package day11_practice_tasks;
-import day11_practice_tasks.Server.*;
-import day11_practice_tasks.Chef.*;
+package day11_practice_tasks.resturant;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class Resturant {
 
     public String Owner;
     public String Location;
     public int numberOfStars;
-    ArrayList<Server> serverList=new ArrayList<>();
-
-    ArrayList<Chef> chefList=new ArrayList<>();
+    public ArrayList<Server> serverList;
+    public ArrayList<Chef> chefList;
 
     public Resturant(String owner, String location, int numberOfStars) {
         this.Owner = owner;
         this.Location = location;
         this.numberOfStars = numberOfStars;
+        serverList=new ArrayList<>();
+        chefList=new ArrayList<>();
     }
 
     public String toString() {
@@ -26,34 +24,38 @@ public class Resturant {
                 "Owner='" + Owner + '\'' +
                 ", Location='" + Location + '\'' +
                 ", numberOfStars=" + numberOfStars +
-                ", numberOfChefs= "+ chefList.size()+
-                 ", numberOfServers= "+ serverList.size()+
+                ", numberOfChefs= " + chefList.size() +
+                ", numberOfServers= " + serverList.size() +
                 '}';
     }
 
 
-    public void hireServer(Server server){
+    public void hireServer(Server server) {
 
         serverList.add(server);
     }
-   public void hireServer(Server[] servers){
 
-        serverList.addAll(Arrays.asList(servers));
-   }
+    public void hireServer(Server[] servers) {
+
+        this.serverList.addAll(Arrays.asList(servers));
+    }
 
 
-    public void hireChef(Chef chef){
+    public void hireChef(Chef chef) {
         chefList.add(chef);
     }
-    public void hireChef(Chef[] chefs){
-        chefList.addAll(Arrays.asList(chefs));
+
+    public void hireChef(Chef[] chefs) {
+        this.chefList.addAll(Arrays.asList(chefs));
     }
-   public void terminateChef(int employeeID){
-        chefList.removeIf(p->p.employeeID==employeeID);
-   }
-   public void terminateServer(int employeeID){
-        serverList.removeIf(p1->p1.employeeID==employeeID);
-   }
+
+    public void terminateChef(int employeeID) {
+        chefList.removeIf(p -> p.employeeID == employeeID);
+    }
+
+    public void terminateServer(int employeeID) {
+        serverList.removeIf(p1 -> p1.employeeID == employeeID);
+    }
 }
 
 /*Create a custom class named Restaurant with the following specifications:
