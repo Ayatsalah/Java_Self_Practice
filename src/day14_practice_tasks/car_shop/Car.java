@@ -9,10 +9,7 @@ public class Car {
     public int year;
     public double price;
 
-   // ArrayList<Car>=new ArrayList<>();
-
-
-    public Car(String model, String color, int year, double price) {
+       public Car(String model, String color, int year, double price) {
         this.model = model;
         this.year = year;
         this.color = color;

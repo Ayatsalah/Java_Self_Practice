@@ -1,7 +1,7 @@
 package day14_practice_tasks.car;
 
 public interface Flyable {
-    boolean CAN_FLY=false;
+    boolean CAN_FLY=true;
 
     void fly();
 }

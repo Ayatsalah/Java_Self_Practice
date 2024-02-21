@@ -2,7 +2,7 @@ package day14_practice_tasks.car;
 
 public interface AutoPilot extends AutoPark {
 
-    boolean HAS_AUTO_PILOT=false;
+    boolean HAS_AUTO_PILOT=true;
 
     void selfDrive();
 }

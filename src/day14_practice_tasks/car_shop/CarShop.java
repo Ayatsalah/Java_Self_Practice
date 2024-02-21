@@ -23,7 +23,7 @@ public class CarShop {
                 new Tesla("Model X", "White", 2016, 48000),
                 new Tesla("Model X", "Blue", 2014, 48000),
         };
-        //public void recall () {
+
         for (Car each : cars) {
             if (each instanceof Honda) {
                 if (each.year >= 2010 && each.year <= 2011) {

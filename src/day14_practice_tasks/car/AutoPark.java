@@ -1,9 +1,9 @@
 package day14_practice_tasks.car;
 
 public interface AutoPark {
-    boolean HAS_AUTO_PARK=false;
+    boolean HAS_AUTO_PARK=true;
 
-    public abstract void autoPark();
+    void autoPark();
 }
 /*Create an Interface Named 'AutoPark':
     - Variable:

@@ -7,6 +7,22 @@ public abstract class Car {
     private final int year;
     private double price;
     private String color;
+    public Car(String make, String model, int year, double price, String color) {
+        if(make==null || make.isEmpty()){
+            throw new RuntimeException("make must not be null or empty");
+        }
+        this.make = make;
+        if(model==null ||model.isEmpty()){
+            throw new RuntimeException("model must not be null or empty");
+        }
+        this.model = model;
+        if(year<1886){
+            throw new RuntimeException("year must be grater than 1886");
+        }
+        this.year = year;
+        setPrice(price);
+        setColor(color);
+    }
 
     public String getMake() {
         return make;
@@ -37,27 +53,6 @@ public abstract class Car {
     public void setColor(String color) {
         if (color==null || color.isEmpty()){throw new RuntimeException("The color must not be null or empty.");}
         this.color = color;
-    }
-
-    public void setModel(String model) {
-        if (model==null || model.isEmpty()){throw new RuntimeException("The model must not be null or empty.");}
-            //this.model = model;
-    }
-    public void setMake(String make) {
-        if (make==null || make.isEmpty()){throw new RuntimeException("The make must not be null or empty.");}
-           // this.make = make;
-    }
-    public void setYear(int year) {
-        if (year<1866){throw new RuntimeException("year must not be less than 1886.");}
-          //  this.year = year;
-    }
-
-    public Car(String make, String model, int year, double price, String color) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        setPrice(price);
-        setColor(color);
     }
 
     public abstract void start();
